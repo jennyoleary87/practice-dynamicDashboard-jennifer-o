@@ -1,0 +1,34 @@
+function DynamicDashboard() {
+ // Dynamic Greeting
+ const userName = "Taylor";
+ // Conditional Content
+ const isPremiumUser = true;
+ // Task List
+ const tasks = [
+ { taskName: "Complete React Assignment", completed: true },
+ { taskName: "Review JSX Concepts", completed: false },
+ { taskName: "Submit Bootcamp Project", completed: false },
+ ];
+ return (
+ <div>
+ {/* Greeting */}
+ <h1>Hello, {userName}!</h1>
+ {/* Conditional Content */}
+ <p>
+ {isPremiumUser
+ ? "Thank you for being a premium member!"
+ : "Upgrade to premium to enjoy exclusive features!"}
+ </p>
+ {/* Task List */}
+ <h2>Your Tasks:</h2>
+ <ul>
+ {tasks.map((task, index) => (
+ <li key={index}>
+ {task.taskName} {task.completed ? "✅" : "❌"}
+ </li>
+ ))}
+ </ul>
+ </div>
+ );
+}
+export default DynamicDashboard;
